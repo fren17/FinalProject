@@ -13,7 +13,14 @@ import javafx.scene.Scene;
 
 public class ScheduleCheckerController {
 	Stage applicationStage;
-
+	
+	@FXML
+	private VBox mainScreen;
+	
+	@FXML
+	void setCourses(ActionEvent event) {
+		
+	}
 }
 
 
