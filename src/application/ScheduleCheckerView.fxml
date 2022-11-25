@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="401.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="mainLabel" text="Welcome to your assignment Tracker. Please follow the steps below to start keeping track of your due dates." />
+      <Label fx:id="stepOne" prefHeight="17.0" prefWidth="579.0" text="Step 1: Insert the courses you are taking this semester, and indicate wether each is required for your major" />
+      <Button mnemonicParsing="false" onAction="#setCourses" text="Insert Courses" />
+      <Label fx:id="stepTwo" text="Step 2: for each course, select the type of assignment, the due date of the assignment, and the weight of each component" />
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <ChoiceBox fx:id="assignmentType" prefWidth="150.0" />
+            <Button fx:id="dueDates" mnemonicParsing="false" text="Insert Due dates and weights" />
+         </children>
+      </HBox>
+   </children>
+</VBox>
