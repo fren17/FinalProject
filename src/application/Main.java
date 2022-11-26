@@ -13,9 +13,8 @@ import javafx.scene.layout.HBox;
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
+		FXMLLoader loader = new FXMLLoader();
 		try {
-			
-			FXMLLoader loader = new FXMLLoader();
 			HBox root = loader.load(new FileInputStream("src/application/ScheduleCheckerView.fxml"));
 			ScheduleCheckerController controller = (ScheduleCheckerController)loader.getController();
 			controller.applicationStage = primaryStage;

@@ -15,6 +15,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 public class ScheduleCheckerController {
@@ -33,6 +34,7 @@ public class ScheduleCheckerController {
 			AnchorPane root = loader.load(new FileInputStream("src/application/Classes.fxml"));
 			nextSceneController = loader.getController();
 			applicationStage.setScene(new Scene(root));
+			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
