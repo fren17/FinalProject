@@ -15,7 +15,7 @@ public class ScheduleCheckerController {
 	Stage applicationStage;
 	
 	@FXML
-	private VBox mainScreen;
+	private HBox mainScreen;
 	
 	@FXML
 	void setCourses(ActionEvent event) {

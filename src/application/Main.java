@@ -7,7 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.HBox;
 
 
 public class Main extends Application {
@@ -16,7 +16,7 @@ public class Main extends Application {
 		try {
 			
 			FXMLLoader loader = new FXMLLoader();
-			VBox root = loader.load(new FileInputStream("src/application/ScheduleCheckerView.fxml"));
+			HBox root = loader.load(new FileInputStream("src/application/ScheduleCheckerView.fxml"));
 			ScheduleCheckerController controller = (ScheduleCheckerController)loader.getController();
 			controller.applicationStage = primaryStage;
 			Scene scene = new Scene(root,400,400);

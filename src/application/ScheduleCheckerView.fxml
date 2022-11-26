@@ -4,197 +4,203 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox fx:id="mainScreen" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="931.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ScheduleCheckerController">
+<HBox fx:id="mainScreen" prefHeight="100.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ScheduleCheckerController">
    <children>
-      <Label fx:id="mainLabel" text="Welcome to your assignment Tracker. Please follow the steps below to start keeping track of your due dates." />
-      <Label fx:id="stepOne" prefHeight="17.0" prefWidth="579.0" text="Step 1: Insert the courses you are taking this semester, and indicate wether each is required for your major" />
-      <Button mnemonicParsing="false" onAction="#setCourses" text="Insert Courses" />
-      <Label fx:id="stepTwo" text="Step 2: for each course, select the type of assignment, the due date of the assignment, and the weight of each component" />
-      <Label fx:id="courseOne" prefHeight="17.0" prefWidth="153.0" text="Course One:" />
-      <HBox prefHeight="27.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType1_1" prefWidth="150.0" />
-            <Button fx:id="dueDates1_1" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-       <HBox prefHeight="26.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType1_2" prefWidth="150.0" />
-            <Button fx:id="dueDates1_2" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-      <HBox prefHeight="23.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType1_3" prefWidth="150.0" />
-            <Button fx:id="dueDates1_3" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-      <HBox prefHeight="27.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType1_4" prefWidth="150.0" />
-            <Button fx:id="dueDates1_4" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-      <HBox prefHeight="26.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType1_5" prefWidth="150.0" />
-            <Button fx:id="dueDates1_5" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-      <Label prefHeight="17.0" prefWidth="119.0" text="Course Two:" />
-      <HBox prefHeight="35.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType2_1" prefWidth="150.0" />
-            <Button fx:id="dueDates2_1" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-      <HBox prefHeight="26.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType2_2" prefWidth="150.0" />
-            <Button fx:id="dueDates2_2" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-      <HBox prefHeight="26.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType2_3" prefWidth="150.0" />
-            <Button fx:id="dueDates2_3" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-      <HBox prefHeight="26.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType2_4" prefWidth="150.0" />
-            <Button fx:id="dueDates2_4" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-      <HBox prefHeight="26.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType2_5" prefWidth="150.0" />
-            <Button fx:id="dueDates2_5" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-   <Label prefHeight="17.0" prefWidth="119.0" text="Course Three:" />
-      <HBox prefHeight="35.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType3_1" prefWidth="150.0" />
-            <Button fx:id="dueDates3_1" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-      <HBox prefHeight="26.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType3_2" prefWidth="150.0" />
-            <Button fx:id="dueDates3_2" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-      <HBox prefHeight="26.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType3_3" prefWidth="150.0" />
-            <Button fx:id="dueDates3_3" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-      <HBox prefHeight="26.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType3_4" prefWidth="150.0" />
-            <Button fx:id="dueDates3_4" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-      <HBox prefHeight="26.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType3_5" prefWidth="150.0" />
-            <Button fx:id="dueDates3_5" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-   <Label prefHeight="17.0" prefWidth="119.0" text="Course Four:" />
-      <HBox prefHeight="35.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType4_1" prefWidth="150.0" />
-            <Button fx:id="dueDates4_1" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-      <HBox prefHeight="26.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType4_2" prefWidth="150.0" />
-            <Button fx:id="dueDates4_2" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-      <HBox prefHeight="26.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType4_3" prefWidth="150.0" />
-            <Button fx:id="dueDates4_3" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-      <HBox prefHeight="26.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType4_4" prefWidth="150.0" />
-            <Button fx:id="dueDates4_4" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-      <HBox prefHeight="26.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType4_5" prefWidth="150.0" />
-            <Button fx:id="dueDates4_5" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-   <Label prefHeight="17.0" prefWidth="119.0" text="Course Five:" />
-      <HBox prefHeight="35.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType5_1" prefWidth="150.0" />
-            <Button fx:id="dueDates5_1" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-      <HBox prefHeight="26.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType5_2" prefWidth="150.0" />
-            <Button fx:id="dueDates5_2" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-      <HBox prefHeight="26.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType5_3" prefWidth="150.0" />
-            <Button fx:id="dueDates5_3" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-      <HBox prefHeight="26.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType5_4" prefWidth="150.0" />
-            <Button fx:id="dueDates5_4" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-      <HBox prefHeight="26.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType5_5" prefWidth="150.0" />
-            <Button fx:id="dueDates5_5" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-   <Label prefHeight="17.0" prefWidth="119.0" text="Course Six:" />
-      <HBox prefHeight="35.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType6_1" prefWidth="150.0" />
-            <Button fx:id="dueDates6_2" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-      <HBox prefHeight="26.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType6_2" prefWidth="150.0" />
-            <Button fx:id="dueDates6_2" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-      <HBox prefHeight="26.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType6_3" prefWidth="150.0" />
-            <Button fx:id="dueDates6_3" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-      <HBox prefHeight="26.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType6_4" prefWidth="150.0" />
-            <Button fx:id="dueDates6_4" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
-      <HBox prefHeight="26.0" prefWidth="670.0">
-         <children>
-            <ChoiceBox fx:id="assignmentType6_5" prefWidth="150.0" />
-            <Button fx:id="dueDates6_5" mnemonicParsing="false" text="Insert Due dates and weights" />
-         </children>
-      </HBox>
+   <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="931.0" prefWidth="670.0">
+      <children>
+         <Label fx:id="mainLabel" text="Welcome to your assignment Tracker. Please follow the steps below to start keeping track of your due dates." />
+         <Label fx:id="stepOne" prefHeight="17.0" prefWidth="579.0" text="Step 1: Insert the courses you are taking this semester, and indicate wether each is required for your major" />
+         <Button mnemonicParsing="false" onAction="#setCourses" text="Insert Courses" />
+         <Label fx:id="stepTwo" text="Step 2: for each course, select the type of assignment, the due date of the assignment, and the weight of each component" />
+         <Label fx:id="courseOne" prefHeight="17.0" prefWidth="153.0" text="Course One:" />
+         <HBox prefHeight="27.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType1_1" prefWidth="150.0" />
+               <Button fx:id="dueDates1_1" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+          <HBox prefHeight="26.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType1_2" prefWidth="150.0" />
+               <Button fx:id="dueDates1_2" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+         <HBox prefHeight="23.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType1_3" prefWidth="150.0" />
+               <Button fx:id="dueDates1_3" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+         <HBox prefHeight="27.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType1_4" prefWidth="150.0" />
+               <Button fx:id="dueDates1_4" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+         <HBox prefHeight="26.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType1_5" prefWidth="150.0" />
+               <Button fx:id="dueDates1_5" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+         <Label prefHeight="17.0" prefWidth="119.0" text="Course Two:" />
+         <HBox prefHeight="35.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType2_1" prefWidth="150.0" />
+               <Button fx:id="dueDates2_1" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+         <HBox prefHeight="26.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType2_2" prefWidth="150.0" />
+               <Button fx:id="dueDates2_2" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+         <HBox prefHeight="26.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType2_3" prefWidth="150.0" />
+               <Button fx:id="dueDates2_3" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+         <HBox prefHeight="26.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType2_4" prefWidth="150.0" />
+               <Button fx:id="dueDates2_4" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+         <HBox prefHeight="26.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType2_5" prefWidth="150.0" />
+               <Button fx:id="dueDates2_5" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+      <Label prefHeight="17.0" prefWidth="119.0" text="Course Three:" />
+         <HBox prefHeight="35.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType3_1" prefWidth="150.0" />
+               <Button fx:id="dueDates3_1" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+         <HBox prefHeight="26.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType3_2" prefWidth="150.0" />
+               <Button fx:id="dueDates3_2" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+         <HBox prefHeight="26.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType3_3" prefWidth="150.0" />
+               <Button fx:id="dueDates3_3" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+         <HBox prefHeight="26.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType3_4" prefWidth="150.0" />
+               <Button fx:id="dueDates3_4" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+         <HBox prefHeight="26.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType3_5" prefWidth="150.0" />
+               <Button fx:id="dueDates3_5" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+      <Label prefHeight="17.0" prefWidth="119.0" text="Course Four:" />
+         <HBox prefHeight="35.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType4_1" prefWidth="150.0" />
+               <Button fx:id="dueDates4_1" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+         <HBox prefHeight="26.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType4_2" prefWidth="150.0" />
+               <Button fx:id="dueDates4_2" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+         <HBox prefHeight="26.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType4_3" prefWidth="150.0" />
+               <Button fx:id="dueDates4_3" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+         <HBox prefHeight="26.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType4_4" prefWidth="150.0" />
+               <Button fx:id="dueDates4_4" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+         <HBox prefHeight="26.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType4_5" prefWidth="150.0" />
+               <Button fx:id="dueDates4_5" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+      <Label prefHeight="17.0" prefWidth="119.0" text="Course Five:" />
+         <HBox prefHeight="35.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType5_1" prefWidth="150.0" />
+               <Button fx:id="dueDates5_1" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+         <HBox prefHeight="26.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType5_2" prefWidth="150.0" />
+               <Button fx:id="dueDates5_2" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+         <HBox prefHeight="26.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType5_3" prefWidth="150.0" />
+               <Button fx:id="dueDates5_3" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+         <HBox prefHeight="26.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType5_4" prefWidth="150.0" />
+               <Button fx:id="dueDates5_4" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+         <HBox prefHeight="26.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType5_5" prefWidth="150.0" />
+               <Button fx:id="dueDates5_5" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+      <Label prefHeight="17.0" prefWidth="119.0" text="Course Six:" />
+         <HBox prefHeight="35.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType6_1" prefWidth="150.0" />
+               <Button fx:id="dueDates6_2" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+         <HBox prefHeight="26.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType6_2" prefWidth="150.0" />
+               <Button fx:id="dueDates6_2" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+         <HBox prefHeight="26.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType6_3" prefWidth="150.0" />
+               <Button fx:id="dueDates6_3" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+         <HBox prefHeight="26.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType6_4" prefWidth="150.0" />
+               <Button fx:id="dueDates6_4" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+         <HBox prefHeight="26.0" prefWidth="670.0">
+            <children>
+               <ChoiceBox fx:id="assignmentType6_5" prefWidth="150.0" />
+               <Button fx:id="dueDates6_5" mnemonicParsing="false" text="Insert Due dates and weights" />
+            </children>
+         </HBox>
+         
+      </children>
+   </VBox>
+      <ScrollBar orientation="VERTICAL" /> 
    </children>
-</VBox>
+</HBox>
