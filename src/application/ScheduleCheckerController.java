@@ -31,7 +31,7 @@ public class ScheduleCheckerController {
 	void setCourses(ActionEvent event) {
 		FXMLLoader loader = new FXMLLoader();
 		try {
-			AnchorPane root = loader.load(new FileInputStream("src/application/Classes.fxml"));
+			AnchorPane root = loader.load(new FileInputStream("src/application/ClassesView.fxml"));
 			nextSceneController = loader.getController();
 			applicationStage.setScene(new Scene(root));
 			
