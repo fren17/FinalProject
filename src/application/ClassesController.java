@@ -11,16 +11,14 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class ClassesController {
-	private Stage primaryStage;
-	private Scene mainScene;
-	private Parent root;
 	
 	@FXML
 	public void doneCourses(ActionEvent event) throws IOException{
-		Parent root = FXMLLoader.load(getClass().getResource("ClassesView.fxml"));
-		primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		mainScene = new Scene(root);
-		primaryStage.setScene(mainScene);
-		primaryStage.show();
+		ScheduleCheckerController controller = new ScheduleCheckerController();
+		Parent root = FXMLLoader.load(getClass().getResource("ScheduleCheckerView.fxml"));
+		controller.setPrimaryStage((Stage)((Node)event.getSource()).getScene().getWindow());
+		controller.setMainScene(new Scene(root));
+		controller.getPrimaryStage().setScene(controller.getMainScene());
+		controller.getPrimaryStage().show();
 	}
 }

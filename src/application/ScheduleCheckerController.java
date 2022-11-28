@@ -28,18 +28,42 @@ public class ScheduleCheckerController {
 	
 	public void setCourses(ActionEvent event) throws IOException{ //https://www.youtube.com/watch?v=hcM-R-YOKkQ&ab_channel=BroCode
 		Parent root = FXMLLoader.load(getClass().getResource("ClassesView.fxml"));
-		primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		mainScene = new Scene(root);
-		primaryStage.setScene(mainScene);
-		primaryStage.show();
+		setPrimaryStage((Stage)((Node)event.getSource()).getScene().getWindow());
+		setMainScene(new Scene(root));
+		getPrimaryStage().setScene(getMainScene());
+		getPrimaryStage().show();
 	}
 	
 	public void setDueDates(ActionEvent event) throws IOException{
 		Parent root = FXMLLoader.load(getClass().getResource("DueDatesView.fxml"));
-		primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		mainScene = new Scene(root);
-		primaryStage.setScene(mainScene);
-		primaryStage.show();
+		setPrimaryStage((Stage)((Node)event.getSource()).getScene().getWindow());
+		setMainScene(new Scene(root));
+		getPrimaryStage().setScene(getMainScene());
+		getPrimaryStage().show();
+	}
+
+	public Stage getPrimaryStage() {
+		return primaryStage;
+	}
+
+	public void setPrimaryStage(Stage primaryStage) {
+		this.primaryStage = primaryStage;
+	}
+
+	public Scene getMainScene() {
+		return mainScene;
+	}
+
+	public void setMainScene(Scene mainScene) {
+		this.mainScene = mainScene;
+	}
+
+	public Parent getRoot() {
+		return root;
+	}
+
+	public void setRoot(Parent root) {
+		this.root = root;
 	}
 }
 
