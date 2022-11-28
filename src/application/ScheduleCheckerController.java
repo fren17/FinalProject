@@ -15,11 +15,16 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 public class ScheduleCheckerController {
-	Stage applicationStage;
+	//Stage applicationStage;
+	
+	private Stage primaryStage;
+	private Scene mainScene;
+	private Parent root;
 	
 	@FXML
 	private ClassesController nextSceneController;
@@ -27,20 +32,20 @@ public class ScheduleCheckerController {
 	@FXML
 	private HBox mainScreen;
 	
-	@FXML
-	void setCourses(ActionEvent event) {
-		FXMLLoader loader = new FXMLLoader();
-		try {
-			AnchorPane root = loader.load(new FileInputStream("src/application/ClassesView.fxml"));
-			nextSceneController = loader.getController();
-			applicationStage.setScene(new Scene(root));
-			
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
+	public void setCourses(ActionEvent event) throws IOException{ //https://www.youtube.com/watch?v=hcM-R-YOKkQ&ab_channel=BroCode
+		Parent root = FXMLLoader.load(getClass().getResource("ClassesView.fxml"));
+		primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		mainScene = new Scene(root);
+		primaryStage.setScene(mainScene);
+		primaryStage.show();
+	}
+	
+	public void setDueDates(ActionEvent event) throws IOException{
+		Parent root = FXMLLoader.load(getClass().getResource("DueDatesView.fxml"));
+		primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		mainScene = new Scene(root);
+		primaryStage.setScene(mainScene);
+		primaryStage.show();
 	}
 }
 

@@ -15,8 +15,9 @@
          <Label fx:id="courseOne" prefHeight="17.0" prefWidth="153.0" text="Course One:" />
          <HBox prefHeight="27.0" prefWidth="670.0">
             <children>
-               <ChoiceBox fx:id="assignmentType1_1" prefWidth="150.0" />
-               <Button fx:id="dueDates1_1" mnemonicParsing="false" text="Insert Due dates and weights" />
+               <ChoiceBox fx:id="assignmentType1_1" prefWidth="150.0" >
+	            </ChoiceBox>
+               <Button fx:id="dueDates1_1" mnemonicParsing="false" onAction="#setDueDates" text="Insert Due dates and weights" />
             </children>
          </HBox>
           <HBox prefHeight="26.0" prefWidth="670.0">
