@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 public class ClassesController {
 	
-
+	@FXML
 	public void doneCourses(ActionEvent event) throws IOException{
 		//take back to main page
 	}

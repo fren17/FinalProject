@@ -26,12 +26,6 @@ public class ScheduleCheckerController {
 	private Scene mainScene;
 	private Parent root;
 	
-	@FXML
-	private ClassesController nextSceneController;
-	
-	@FXML
-	private HBox mainScreen;
-	
 	public void setCourses(ActionEvent event) throws IOException{ //https://www.youtube.com/watch?v=hcM-R-YOKkQ&ab_channel=BroCode
 		Parent root = FXMLLoader.load(getClass().getResource("ClassesView.fxml"));
 		primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
