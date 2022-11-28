@@ -97,5 +97,6 @@
             </ChoiceBox>
          </children>
       </HBox>
+      <Button mnemonicParsing="false" onAction="#doneCourses" text="Button" />
    </children>
 </VBox>
