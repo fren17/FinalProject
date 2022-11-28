@@ -8,17 +8,31 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class ClassesController {
 	
+	private Parent root;
+	
+	@FXML
+	TextField firstCourse;
+
+
 	@FXML
 	public void doneCourses(ActionEvent event) throws IOException{
-		ScheduleCheckerController controller = new ScheduleCheckerController();
-		Parent root = FXMLLoader.load(getClass().getResource("ScheduleCheckerView.fxml"));
-		controller.setPrimaryStage((Stage)((Node)event.getSource()).getScene().getWindow());
-		controller.setMainScene(new Scene(root));
-		controller.getPrimaryStage().setScene(controller.getMainScene());
-		controller.getPrimaryStage().show();
+		String courseOne = firstCourse.getText();
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("ScheduleCheckerView.fxml"));
+		root = loader.load();
+		ScheduleCheckerController mainController = loader.getController();
+		mainController.displayCourses(courseOne);
+		//root = FXMLLoader.load(getClass().getResource("ScheduleCheckerView.fxml"));
+		
+		
+		mainController.setPrimaryStage((Stage)((Node)event.getSource()).getScene().getWindow());
+		mainController.setMainScene(new Scene(root));
+		mainController.getPrimaryStage().setScene(mainController.getMainScene());
+		mainController.getPrimaryStage().show();
 	}
 }

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.collections.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.collections.FXCollections?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ClassesController">
    <children>
@@ -15,6 +17,26 @@
       </Label>
       <HBox prefHeight="52.0" prefWidth="600.0">
          <children>
+            <TextField fx:id="firstCourse">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </TextField>
+            <ChoiceBox prefWidth="150.0">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+               <items>
+	            	<FXCollections fx:factory="observableArrayList">
+	            		<String fx:value="Major" />
+	            		<String fx:value="Not Major" />
+	           		</FXCollections>
+	           	</items>
+            </ChoiceBox>
+         </children>
+      </HBox>
+      <HBox prefHeight="52.0" prefWidth="600.0">
+         <children>
             <TextField>
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -24,6 +46,12 @@
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
+               <items>
+	            	<FXCollections fx:factory="observableArrayList">
+	            		<String fx:value="Major" />
+	            		<String fx:value="Not Major" />
+	           		</FXCollections>
+	           	</items>
             </ChoiceBox>
          </children>
       </HBox>
@@ -83,20 +111,10 @@
             </ChoiceBox>
          </children>
       </HBox>
-      <HBox prefHeight="52.0" prefWidth="600.0">
-         <children>
-            <TextField>
-               <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </HBox.margin>
-            </TextField>
-            <ChoiceBox prefWidth="150.0">
-               <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </HBox.margin>
-            </ChoiceBox>
-         </children>
-      </HBox>
-      <Button mnemonicParsing="false" onAction="#doneCourses" text="Button" />
+      <Button mnemonicParsing="false" onAction="#doneCourses" text="Back to Main Page">
+      <HBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </HBox.margin>
+      </Button>
    </children>
 </VBox>

@@ -20,14 +20,21 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 public class ScheduleCheckerController {
-	//Stage applicationStage;
+	
+	@FXML
+	Label courseOne;
+	
 	
 	private Stage primaryStage;
 	private Scene mainScene;
 	private Parent root;
 	
+	public void displayCourses(String courseName) {
+		courseOne.setText(courseName + ":");
+	}
+	
 	public void setCourses(ActionEvent event) throws IOException{ //https://www.youtube.com/watch?v=hcM-R-YOKkQ&ab_channel=BroCode
-		Parent root = FXMLLoader.load(getClass().getResource("ClassesView.fxml"));
+		root = FXMLLoader.load(getClass().getResource("ClassesView.fxml"));
 		setPrimaryStage((Stage)((Node)event.getSource()).getScene().getWindow());
 		setMainScene(new Scene(root));
 		getPrimaryStage().setScene(getMainScene());
@@ -56,14 +63,6 @@ public class ScheduleCheckerController {
 
 	public void setMainScene(Scene mainScene) {
 		this.mainScene = mainScene;
-	}
-
-	public Parent getRoot() {
-		return root;
-	}
-
-	public void setRoot(Parent root) {
-		this.root = root;
 	}
 }
 
