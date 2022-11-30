@@ -20,32 +20,57 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 public class ScheduleCheckerController {
-	//Stage applicationStage;
+	
+	@FXML
+	Label courseOne;
+	
 	
 	private Stage primaryStage;
 	private Scene mainScene;
 	private Parent root;
 	
-	@FXML
-	private ClassesController nextSceneController;
-	
-	@FXML
-	private HBox mainScreen;
+	public void displayCourses(String courseName) {
+		courseOne.setText(courseName + ":");
+	}
 	
 	public void setCourses(ActionEvent event) throws IOException{ //https://www.youtube.com/watch?v=hcM-R-YOKkQ&ab_channel=BroCode
-		Parent root = FXMLLoader.load(getClass().getResource("ClassesView.fxml"));
-		primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		mainScene = new Scene(root);
-		primaryStage.setScene(mainScene);
-		primaryStage.show();
+		root = FXMLLoader.load(getClass().getResource("ClassesView.fxml"));
+		setPrimaryStage((Stage)((Node)event.getSource()).getScene().getWindow());
+		setMainScene(new Scene(root));
+		getPrimaryStage().setScene(getMainScene());
+		getPrimaryStage().show();
 	}
 	
 	public void setDueDates(ActionEvent event) throws IOException{
-		Parent root = FXMLLoader.load(getClass().getResource("DueDatesView.fxml"));
-		primaryStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		mainScene = new Scene(root);
-		primaryStage.setScene(mainScene);
-		primaryStage.show();
+		root = FXMLLoader.load(getClass().getResource("DueDatesView.fxml"));
+		setPrimaryStage((Stage)((Node)event.getSource()).getScene().getWindow());
+		setMainScene(new Scene(root));
+		getPrimaryStage().setScene(getMainScene());
+		getPrimaryStage().show();
+	}
+	
+	public void trackAssignments(ActionEvent event) throws IOException {
+		root = FXMLLoader.load(getClass().getResource("TrackerView.fxml"));
+		setPrimaryStage((Stage)((Node)event.getSource()).getScene().getWindow());
+		setMainScene(new Scene(root));
+		getPrimaryStage().setScene(getMainScene());
+		getPrimaryStage().show();
+	}
+
+	public Stage getPrimaryStage() {
+		return primaryStage;
+	}
+
+	public void setPrimaryStage(Stage primaryStage) {
+		this.primaryStage = primaryStage;
+	}
+
+	public Scene getMainScene() {
+		return mainScene;
+	}
+
+	public void setMainScene(Scene mainScene) {
+		this.mainScene = mainScene;
 	}
 }
 
