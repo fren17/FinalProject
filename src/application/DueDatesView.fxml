@@ -187,5 +187,10 @@
             </Label>
          </children>
       </HBox>
+      <Button mnemonicParsing="false" onAction="#back" text="Back to Main Page">
+         <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </VBox.margin>
+      </Button>
    </children>
 </VBox>

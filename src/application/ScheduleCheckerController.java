@@ -42,7 +42,15 @@ public class ScheduleCheckerController {
 	}
 	
 	public void setDueDates(ActionEvent event) throws IOException{
-		Parent root = FXMLLoader.load(getClass().getResource("DueDatesView.fxml"));
+		root = FXMLLoader.load(getClass().getResource("DueDatesView.fxml"));
+		setPrimaryStage((Stage)((Node)event.getSource()).getScene().getWindow());
+		setMainScene(new Scene(root));
+		getPrimaryStage().setScene(getMainScene());
+		getPrimaryStage().show();
+	}
+	
+	public void trackAssignments(ActionEvent event) throws IOException {
+		root = FXMLLoader.load(getClass().getResource("TrackerView.fxml"));
 		setPrimaryStage((Stage)((Node)event.getSource()).getScene().getWindow());
 		setMainScene(new Scene(root));
 		getPrimaryStage().setScene(getMainScene());
