@@ -20,8 +20,11 @@ public class Main extends Application {
 			//ScheduleCheckerController controller = (ScheduleCheckerController)loader.getController();
 			//controller.applicationStage = primaryStage;
 			//Scene scene = new Scene(root,400,400);
+			//HBox root2 = loader.load(new FileInputStream("src/application/ScheduleCheckerView.fxml"));
+			//ScheduleCheckerController controller2 = loader.getController();
 			
-			Parent root = FXMLLoader.load(getClass().getResource("ScheduleCheckerView.fxml"));
+			Parent root = loader.load(getClass().getResource("ScheduleCheckerView.fxml"));
+			ScheduleCheckerController controller1 = loader.getController();
 			Scene mainScene = new Scene(root, 400, 400);
 			primaryStage.setScene(mainScene);
 			primaryStage.setTitle("Assignment Tracker");
