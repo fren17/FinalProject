@@ -35,4 +35,6 @@ public class ClassesController {
 		mainController.getPrimaryStage().setScene(mainController.getMainScene());
 		mainController.getPrimaryStage().show();
 	}
+	
+	
 }

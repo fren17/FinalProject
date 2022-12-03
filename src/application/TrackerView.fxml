@@ -5,11 +5,16 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="471.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="471.0" prefWidth="420.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.TrackerController">
    <children>
       <HBox prefHeight="22.0" prefWidth="420.0">
          <children>
-            <CheckBox mnemonicParsing="false" prefHeight="17.0" prefWidth="219.0" text="Grade, weight, due date, etc here" />
+            <CheckBox fx:id="labelOne" mnemonicParsing="false" prefHeight="17.0" prefWidth="219.0" text="Grade, weight, due date, etc here" />
+         </children>
+      </HBox>
+      <HBox prefHeight="22.0" prefWidth="420.0">
+         <children>
+            <CheckBox fx:id="labelTwo" mnemonicParsing="false" prefHeight="17.0" prefWidth="219.0" text="Grade, weight, due date, etc here" />
          </children>
       </HBox>
    </children>

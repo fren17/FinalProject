@@ -3,6 +3,8 @@ package application;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -50,11 +52,16 @@ public class ScheduleCheckerController {
 	}
 	
 	public void trackAssignments(ActionEvent event) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("TrackerView.fxml"));
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("TrackerView.fxml"));
+		root = loader.load();
+		TrackerController trackerController = loader.getController();
+		trackerController.displayList();
 		setPrimaryStage((Stage)((Node)event.getSource()).getScene().getWindow());
 		setMainScene(new Scene(root));
 		getPrimaryStage().setScene(getMainScene());
 		getPrimaryStage().show();
+		//delete :
 	}
 
 	public Stage getPrimaryStage() {
