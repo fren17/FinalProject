@@ -10,6 +10,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -26,13 +27,33 @@ public class ScheduleCheckerController {
 	@FXML
 	Label courseOne;
 	
+	@FXML
+	Label courseTwo;
+	
+	@FXML
+	Label courseThree;
+	
+	@FXML
+	Label courseFour;
+	
+	@FXML
+	Label courseFive;
+	
+	@FXML
+	Label courseSix;
+	
 	private ArrayList<LocalDate> dueDates;
 	private Stage primaryStage;
 	private Scene mainScene;
 	private Parent root;
 	
-	public void displayCourses(String courseName) {
-		courseOne.setText(courseName + ":");
+	public void displayCourses(String courseOneName, String courseTwoName, String courseThreeName, String courseFourName,String courseFiveName, String courseSixName) {
+		courseOne.setText(courseOneName + ":");
+		courseTwo.setText(courseTwoName + ":");
+		courseThree.setText(courseThreeName + ":");
+		courseFour.setText(courseFourName + ":");
+		courseFive.setText(courseFiveName + ":");
+		courseSix.setText(courseSixName + ":");
 	}
 	
 	public void setCourses(ActionEvent event) throws IOException{ //https://www.youtube.com/watch?v=hcM-R-YOKkQ&ab_channel=BroCode
@@ -64,6 +85,7 @@ public class ScheduleCheckerController {
 		setMainScene(new Scene(root));
 		getPrimaryStage().setScene(getMainScene());
 		getPrimaryStage().show();
+		
 		//delete :
 		/*root = FXMLLoader.load(getClass().getResource("TrackerView.fxml"));
 		setPrimaryStage((Stage)((Node)event.getSource()).getScene().getWindow());
