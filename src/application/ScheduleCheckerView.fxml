@@ -103,7 +103,7 @@
                      <Button fx:id="dueDates1_5" mnemonicParsing="false" text="Insert Due dates and weights" />
                   </children>
                </HBox>
-               <Label prefHeight="17.0" prefWidth="119.0" text="Course Two:" />
+               <Label fx:id="courseTwo" prefHeight="17.0" prefWidth="119.0" text="Course Two:" />
                <HBox prefHeight="35.0" prefWidth="670.0">
                   <children>
                      <ChoiceBox fx:id="assignmentType2_1" prefWidth="150.0">
@@ -189,7 +189,7 @@
                      <Button fx:id="dueDates2_5" mnemonicParsing="false" text="Insert Due dates and weights" />
                   </children>
                </HBox>
-            <Label prefHeight="17.0" prefWidth="119.0" text="Course Three:" />
+            <Label fx:id="courseThree" prefHeight="17.0" prefWidth="119.0" text="Course Three:" />
                <HBox prefHeight="35.0" prefWidth="670.0">
                   <children>
                      <ChoiceBox fx:id="assignmentType3_1" prefWidth="150.0">
@@ -275,7 +275,7 @@
                      <Button fx:id="dueDates3_5" mnemonicParsing="false" text="Insert Due dates and weights" />
                   </children>
                </HBox>
-            <Label prefHeight="17.0" prefWidth="119.0" text="Course Four:" />
+            <Label fx:id="courseFour" prefHeight="17.0" prefWidth="119.0" text="Course Four:" />
                <HBox prefHeight="35.0" prefWidth="670.0">
                   <children>
                      <ChoiceBox fx:id="assignmentType4_1" prefWidth="150.0">
@@ -361,7 +361,7 @@
                      <Button fx:id="dueDates4_5" mnemonicParsing="false" text="Insert Due dates and weights" />
                   </children>
                </HBox>
-            <Label prefHeight="17.0" prefWidth="119.0" text="Course Five:" />
+            <Label fx:id="courseFive" prefHeight="17.0" prefWidth="119.0" text="Course Five:" />
                <HBox prefHeight="35.0" prefWidth="670.0">
                   <children>
                      <ChoiceBox fx:id="assignmentType5_1" prefWidth="150.0">
@@ -447,7 +447,7 @@
                      <Button fx:id="dueDates5_5" mnemonicParsing="false" text="Insert Due dates and weights" />
                   </children>
                </HBox>
-            <Label prefHeight="17.0" prefWidth="119.0" text="Course Six:" />
+            <Label fx:id="courseSix" prefHeight="17.0" prefWidth="119.0" text="Course Six:" />
                <HBox prefHeight="35.0" prefWidth="670.0">
                   <children>
                      <ChoiceBox fx:id="assignmentType6_1" prefWidth="150.0">

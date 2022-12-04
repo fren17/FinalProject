@@ -19,7 +19,7 @@
       </HBox>
       <HBox prefHeight="58.0" prefWidth="262.0">
          <children>
-            <DatePicker prefHeight="25.0" prefWidth="131.0">
+            <DatePicker fx:id="date_1" prefHeight="25.0" prefWidth="131.0">
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin></DatePicker>
@@ -37,7 +37,7 @@
       </HBox>
       <HBox prefHeight="58.0" prefWidth="262.0">
          <children>
-            <DatePicker prefHeight="25.0" prefWidth="131.0">
+            <DatePicker fx:id="date_2" prefHeight="25.0" prefWidth="131.0">
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
