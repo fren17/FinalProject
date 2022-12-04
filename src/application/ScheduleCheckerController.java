@@ -26,7 +26,7 @@ public class ScheduleCheckerController {
 	@FXML
 	Label courseOne;
 	
-	
+	private ArrayList<LocalDate> dueDates;
 	private Stage primaryStage;
 	private Scene mainScene;
 	private Parent root;
@@ -50,18 +50,26 @@ public class ScheduleCheckerController {
 		getPrimaryStage().setScene(getMainScene());
 		getPrimaryStage().show();
 	}
+	public void setDueDates(ArrayList<LocalDate> dueDates) {
+		this.dueDates = dueDates;
+	}
 	
 	public void trackAssignments(ActionEvent event) throws IOException {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("TrackerView.fxml"));
 		root = loader.load();
 		TrackerController trackerController = loader.getController();
-		trackerController.displayList();
+		trackerController.displayList(dueDates);
 		setPrimaryStage((Stage)((Node)event.getSource()).getScene().getWindow());
 		setMainScene(new Scene(root));
 		getPrimaryStage().setScene(getMainScene());
 		getPrimaryStage().show();
 		//delete :
+		/*root = FXMLLoader.load(getClass().getResource("TrackerView.fxml"));
+		setPrimaryStage((Stage)((Node)event.getSource()).getScene().getWindow());
+		setMainScene(new Scene(root));
+		getPrimaryStage().setScene(getMainScene());
+		getPrimaryStage().show();*/
 	}
 
 	public Stage getPrimaryStage() {

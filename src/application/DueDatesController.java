@@ -33,6 +33,7 @@ public class DueDatesController {
 		loader.setLocation(getClass().getResource("ScheduleCheckerView.fxml"));
 		root = loader.load();
 		ScheduleCheckerController mainController = loader.getController();
+		mainController.setDueDates(getAssignmentDates());
 		//root = FXMLLoader.load(getClass().getResource("ScheduleCheckerView.fxml"));
 		
 		
@@ -40,7 +41,13 @@ public class DueDatesController {
 		mainController.setMainScene(new Scene(root));
 		mainController.getPrimaryStage().setScene(mainController.getMainScene());
 		mainController.getPrimaryStage().show();
-		System.out.println(date_1.getValue());
+		
+	/*	FXMLLoader loaderTwo = new FXMLLoader();
+		loaderTwo.setLocation(getClass().getResource("TrackerView.fxml"));
+		root = loaderTwo.load();
+		TrackerController trackerController = loaderTwo.getController();
+		trackerController.setAssignmentList(getAssignmentDates());
+		trackerController.displayList();*/
 	}
 	
 
