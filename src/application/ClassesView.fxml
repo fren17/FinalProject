@@ -37,7 +37,7 @@
       </HBox>
       <HBox prefHeight="52.0" prefWidth="600.0">
          <children>
-            <TextField>
+            <TextField fx:id="secondCourse">
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
@@ -57,7 +57,7 @@
       </HBox>
       <HBox prefHeight="52.0" prefWidth="600.0">
          <children>
-            <TextField>
+            <TextField fx:id="thirdCourse">
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
@@ -71,7 +71,7 @@
       </HBox>
       <HBox prefHeight="52.0" prefWidth="600.0">
          <children>
-            <TextField>
+            <TextField fx:id="fourthCourse">
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
@@ -85,7 +85,7 @@
       </HBox>
       <HBox prefHeight="52.0" prefWidth="600.0">
          <children>
-            <TextField>
+            <TextField fx:id="fifthCourse">
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
@@ -99,7 +99,7 @@
       </HBox>
       <HBox prefHeight="52.0" prefWidth="600.0">
          <children>
-            <TextField>
+            <TextField fx:id="sixthCourse">
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
