@@ -17,7 +17,7 @@
                <Label fx:id="stepOne" prefHeight="17.0" prefWidth="579.0" text="Step 1: Insert the courses you are taking this semester, and indicate wether each is required for your major" />
                <Button mnemonicParsing="false" onAction="#setCourses" text="Insert Courses" />
                <Label fx:id="stepTwo" text="Step 2: for each course, select the type of assignment, the due date of the assignment, and the weight of each component" />
-               <Label fx:id="courseOne" prefHeight="17.0" prefWidth="153.0" text="Course One:" />
+               <Label fx:id="courseOneLabel" prefHeight="17.0" prefWidth="153.0" text="Course One:" />
                <HBox prefHeight="37.0" prefWidth="718.0">
                   <children>
                      <Button fx:id="dueDates1_1" mnemonicParsing="false" onAction="#setDueDates" text="Insert Due dates and weights" />

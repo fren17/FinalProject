@@ -1,18 +1,37 @@
 package application;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Assignments extends Course{
-	private Date dueDate;
+	private LocalDate dueDate;
 	private String assignmentType;
-	
-	public Date getDueDate() {
+	private String weight;
+
+
+	public Assignments(String assignmentType, LocalDate dueDate, String weight) {
+		this.assignmentType = assignmentType;
+		this.setDueDate(dueDate);
+		this.setWeight(weight);
+	}
+
+
+	public LocalDate getDueDate() {
 		return dueDate;
 	}
-	public void setDueDate(Date dueDate) {
-		//get due dates from controller
+
+
+	public void setDueDate(LocalDate dueDate) {
+		this.dueDate = dueDate;
 	}
-	
-	
+
+
+	public String getWeight() {
+		return weight;
+	}
+
+
+	public void setWeight(String weight) {
+		this.weight = weight;
+	}
 
 }

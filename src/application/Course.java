@@ -5,19 +5,20 @@ import java.util.ArrayList;
 import javafx.fxml.FXMLLoader;
 
 public class Course {
+	private ArrayList<Assignments> Assignments;
 	private String className;
-	private int classColour;
-	private ArrayList<String> Assignments;
 	
-	private int getClassColour() {
-		return classColour;
-	}
-	private void setClassColour(int classColour) {
-		this.classColour = classColour;
-	}
-	private String getClassName() {
+	public String getClassName() {
 		return className;
 	}
-	private void setClassName(String className) {
+
+	public void setClassName(String className) {
+		this.className = className;
+	}
+	
+	public void addAssignments(Assignments theAssignment) {
+		Assignments = new ArrayList<Assignments>();
+		Assignments.add(theAssignment);
+		
 	}
 }
