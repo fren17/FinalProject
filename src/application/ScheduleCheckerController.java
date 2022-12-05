@@ -42,6 +42,7 @@ public class ScheduleCheckerController {
 	@FXML
 	Label courseSix;
 	
+	
 	private ArrayList<LocalDate> dueDates;
 	private Stage primaryStage;
 	private Scene mainScene;
@@ -74,24 +75,29 @@ public class ScheduleCheckerController {
 	public void setDueDates(ArrayList<LocalDate> dueDates) {
 		this.dueDates = dueDates;
 	}
+	public ArrayList<LocalDate> getDueDates() {
+		return dueDates;
+	}
 	
 	public void trackAssignments(ActionEvent event) throws IOException {
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("TrackerView.fxml"));
-		root = loader.load();
-		TrackerController trackerController = loader.getController();
-		trackerController.displayList(dueDates);
-		setPrimaryStage((Stage)((Node)event.getSource()).getScene().getWindow());
-		setMainScene(new Scene(root));
-		getPrimaryStage().setScene(getMainScene());
-		getPrimaryStage().show();
-		
-		//delete :
-		/*root = FXMLLoader.load(getClass().getResource("TrackerView.fxml"));
-		setPrimaryStage((Stage)((Node)event.getSource()).getScene().getWindow());
-		setMainScene(new Scene(root));
-		getPrimaryStage().setScene(getMainScene());
-		getPrimaryStage().show();*/
+		mainScene = primaryStage.getScene();
+		int numOfAssignments = 5;
+		int rowsCreated = 0;
+		ArrayList<CheckBox> checkBoxes = new ArrayList<CheckBox>();
+		VBox container = new VBox();
+		 while (rowsCreated < numOfAssignments) {
+			 HBox rowContainer = new HBox();
+			 CheckBox assignmentCheckbox = new CheckBox();
+			 assignmentCheckbox.setText(courseOne.getText() + 
+					 '\t' + dueDates.get(rowsCreated).toString());
+			 checkBoxes.add(assignmentCheckbox);
+			   
+			 rowContainer.getChildren().addAll(assignmentCheckbox);
+			 rowsCreated++;
+			 container.getChildren().add(rowContainer);
+		 }
+		 Scene trackerView = new Scene(container);
+		 primaryStage.setScene(trackerView);
 	}
 
 	public Stage getPrimaryStage() {
