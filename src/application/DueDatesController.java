@@ -21,14 +21,32 @@ public class DueDatesController {
 	private ScheduleCheckerController mainController;
 	
 	@FXML
-	DatePicker date_1;
+	DatePicker dateOne;
 	
 	@FXML
-	DatePicker date_2;
+	DatePicker dateTwo;
+	
+	@FXML
+	DatePicker dateThree;
+	
+	@FXML
+	DatePicker dateFour;
+	
+	@FXML
+	DatePicker dateFive;
+	
+	@FXML
+	DatePicker dateSix;
+	
+	@FXML
+	DatePicker dateSeven;
+	
+	@FXML
+	DatePicker dateEight;
 	
 	@FXML
 	public void back(ActionEvent event) throws IOException{
-		System.out.println(date_1.getValue());
+		System.out.println(dateOne.getValue());
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("ScheduleCheckerView.fxml"));
 		root = loader.load();
@@ -53,11 +71,12 @@ public class DueDatesController {
 
 	public ArrayList<LocalDate> getAssignmentDates() {
 		ArrayList<LocalDate> dueDates = new ArrayList<LocalDate>();
-		dueDates.add(date_1.getValue());
-		dueDates.add(date_2.getValue());
+		if (dateOne != null) dueDates.add(dateOne.getValue());
+		if (dateTwo != null) dueDates.add(dateTwo.getValue());
+		if (dateThree != null) dueDates.add(dateThree.getValue());
+		if (dateFour != null) dueDates.add(dateFour.getValue());
+		if (dateFive != null) dueDates.add(dateFive.getValue());
 		System.out.println(dueDates);
-		System.out.println(date_1.getValue());
-		System.out.println(date_1.toString());
 		return dueDates;
 	}
 }
