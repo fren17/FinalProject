@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.collections.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
@@ -24,7 +25,7 @@
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin></DatePicker>
-            <TextField prefHeight="25.0" prefWidth="42.0">
+            <TextField fx:id="weightOne" prefHeight="25.0" prefWidth="42.0">
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
@@ -34,7 +35,7 @@
                   <Insets bottom="10.0" left="2.0" right="10.0" top="15.0" />
                </HBox.margin>
             </Label>
-            <ChoiceBox prefWidth="150.0">
+            <ChoiceBox fx:id="assTypeOne" prefWidth="150.0">
            		 <items>
       	            <FXCollections fx:factory="observableArrayList">
       	            	<String fx:value="Lab" />
@@ -55,7 +56,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
             </DatePicker>
-            <TextField prefHeight="25.0" prefWidth="43.0">
+            <TextField fx:id="weightTwo" prefHeight="25.0" prefWidth="43.0">
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
@@ -65,7 +66,7 @@
                   <Insets bottom="10.0" left="5.0" right="10.0" top="15.0" />
                </HBox.margin>
             </Label>
-            <ChoiceBox prefWidth="150.0">
+            <ChoiceBox fx:id="assTypeTwo" prefWidth="150.0">
            		 <items>
       	            <FXCollections fx:factory="observableArrayList">
       	            	<String fx:value="Lab" />
@@ -86,7 +87,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
             </DatePicker>
-            <TextField prefHeight="25.0" prefWidth="43.0">
+            <TextField fx:id="weightThree" prefHeight="25.0" prefWidth="43.0">
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
@@ -96,7 +97,7 @@
                   <Insets bottom="10.0" left="5.0" right="10.0" top="15.0" />
                </HBox.margin>
             </Label>
-            <ChoiceBox prefWidth="150.0">
+            <ChoiceBox fx:id="assTypeThree" prefWidth="150.0">
            		 <items>
       	            <FXCollections fx:factory="observableArrayList">
       	            	<String fx:value="Lab" />
@@ -117,7 +118,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
             </DatePicker>
-            <TextField prefHeight="25.0" prefWidth="43.0">
+            <TextField fx:id="weightFour" prefHeight="25.0" prefWidth="43.0">
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
@@ -127,7 +128,7 @@
                   <Insets bottom="10.0" left="5.0" right="10.0" top="15.0" />
                </HBox.margin>
             </Label>
-             <ChoiceBox prefWidth="150.0">
+             <ChoiceBox fx:id="assTypeFour" prefWidth="150.0">
            		 <items>
       	            <FXCollections fx:factory="observableArrayList">
       	            	<String fx:value="Lab" />
@@ -148,7 +149,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
             </DatePicker>
-            <TextField prefHeight="25.0" prefWidth="43.0">
+            <TextField fx:id="weightFive" prefHeight="25.0" prefWidth="43.0">
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
@@ -158,7 +159,7 @@
                   <Insets bottom="10.0" left="5.0" right="10.0" top="15.0" />
                </HBox.margin>
             </Label>
-             <ChoiceBox prefWidth="150.0">
+             <ChoiceBox fx:id="assTypeFive" prefWidth="150.0">
            		 <items>
       	            <FXCollections fx:factory="observableArrayList">
       	            	<String fx:value="Lab" />

@@ -12,7 +12,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class DueDatesController {
@@ -22,27 +24,35 @@ public class DueDatesController {
 	
 	@FXML
 	DatePicker dateOne;
-	
 	@FXML
 	DatePicker dateTwo;
-	
 	@FXML
 	DatePicker dateThree;
-	
 	@FXML
 	DatePicker dateFour;
-	
 	@FXML
 	DatePicker dateFive;
-	
 	@FXML
-	DatePicker dateSix;
-	
+	TextField weightOne;
 	@FXML
-	DatePicker dateSeven;
-	
+	TextField weightTwo;
 	@FXML
-	DatePicker dateEight;
+	TextField weightThree;
+	@FXML
+	TextField weightFour;
+	@FXML
+	TextField weightFive;
+	@FXML
+	ChoiceBox assTypeOne;
+	@FXML
+	ChoiceBox assTypeTwo;
+	@FXML
+	ChoiceBox assTypeThree;
+	@FXML
+	ChoiceBox assTypeFour;
+	@FXML
+	ChoiceBox assTypeFive;
+	
 	
 	@FXML
 	public void back(ActionEvent event) throws IOException{
@@ -52,6 +62,9 @@ public class DueDatesController {
 		root = loader.load();
 		ScheduleCheckerController mainController = loader.getController();
 		mainController.setDueDates(getAssignmentDates());
+		//mainController.setAssignmentTypes(null);
+		mainController.setWeights(getWeights());
+		mainController.setAssignmentTypes(getAssignmentTypes());
 		//root = FXMLLoader.load(getClass().getResource("ScheduleCheckerView.fxml"));
 		
 		
@@ -78,5 +91,27 @@ public class DueDatesController {
 		if (dateFive != null) dueDates.add(dateFive.getValue());
 		System.out.println(dueDates);
 		return dueDates;
+	}
+	
+	public ArrayList<String> getWeights() {
+		ArrayList<String> weights = new ArrayList<String>();
+		if (weightOne != null) weights.add(weightOne.getText());
+		if (weightTwo != null) weights.add(weightTwo.getText());
+		if (weightThree != null) weights.add(weightThree.getText());
+		if (weightFour != null) weights.add(weightFour.getText());
+		if (weightFive != null) weights.add(weightFive.getText());
+		System.out.println(weights);
+		return weights;
+	}
+	
+	public ArrayList<String> getAssignmentTypes() {
+		ArrayList<String> assignmentTypes = new ArrayList<String>();
+		if (assTypeOne != null) assignmentTypes.add(assTypeOne.getValue().toString());
+		if (assTypeTwo != null) assignmentTypes.add(assTypeTwo.getValue().toString());
+		if (assTypeThree != null) assignmentTypes.add(assTypeThree.getValue().toString());
+		if (assTypeFour != null) assignmentTypes.add(assTypeFour.getValue().toString());
+		if (assTypeFive != null) assignmentTypes.add(assTypeFive.getValue().toString());
+		System.out.println(assignmentTypes);
+		return assignmentTypes;
 	}
 }

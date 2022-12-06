@@ -22,10 +22,10 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
-public class ScheduleCheckerController {
+public class ScheduleCheckerController{
 	
 	@FXML
-	Label courseOne;
+	Label courseOneLabel;
 	
 	@FXML
 	Label courseTwo;
@@ -44,12 +44,20 @@ public class ScheduleCheckerController {
 	
 	
 	private ArrayList<LocalDate> dueDates;
+	private ArrayList<String> assignmentTypes;
+	private ArrayList<String> weights;
+	ArrayList<Assignments> listOfAssignments;
 	private Stage primaryStage;
 	private Scene mainScene;
 	private Parent root;
 	
+	Course courseOne = new Course();
+	
 	public void displayCourses(String courseOneName, String courseTwoName, String courseThreeName, String courseFourName,String courseFiveName, String courseSixName) {
-		courseOne.setText(courseOneName + ":");
+		//courseOneLabel.setText(courseOneName + ":");
+		Course courseOne = new Course();
+		courseOne.setClassName(courseOneName);
+		courseOneLabel.setText(courseOne.getClassName() + ":");
 		courseTwo.setText(courseTwoName + ":");
 		courseThree.setText(courseThreeName + ":");
 		courseFour.setText(courseFourName + ":");
@@ -78,6 +86,18 @@ public class ScheduleCheckerController {
 	public ArrayList<LocalDate> getDueDates() {
 		return dueDates;
 	}
+	public void setAssignmentTypes(ArrayList<String> assignmentTypes) {
+		this.assignmentTypes = assignmentTypes;
+	}
+	public ArrayList<String> getAssignmentTypes() {
+		return assignmentTypes;
+	}
+	public void setWeights(ArrayList<String> weights) {
+		this.weights = weights;
+	}
+	public ArrayList<String> getWeights() {
+		return weights;
+	}
 	
 	public void trackAssignments(ActionEvent event) throws IOException {
 		mainScene = primaryStage.getScene();
@@ -88,8 +108,11 @@ public class ScheduleCheckerController {
 		 while (rowsCreated < numOfAssignments) {
 			 HBox rowContainer = new HBox();
 			 CheckBox assignmentCheckbox = new CheckBox();
-			 assignmentCheckbox.setText(courseOne.getText() + 
-					 '\t' + dueDates.get(rowsCreated).toString());
+			 createAssignmentList();
+			 assignmentCheckbox.setText(listOfAssignments.get(rowsCreated).getAssignmentType() + '\t'
+					+ listOfAssignments.get(rowsCreated).getDueDate() + '\t'
+					+ listOfAssignments.get(rowsCreated).getWeight());
+			 //assignmentCheckbox.setText(courseOne.getClassName() + '\t' + dueDates.get(rowsCreated));
 			 checkBoxes.add(assignmentCheckbox);
 			   
 			 rowContainer.getChildren().addAll(assignmentCheckbox);
@@ -98,6 +121,19 @@ public class ScheduleCheckerController {
 		 }
 		 Scene trackerView = new Scene(container);
 		 primaryStage.setScene(trackerView);
+	}
+	
+	public void createAssignmentList() {
+		listOfAssignments = new ArrayList<Assignments>();
+		int numOfAssignments = 5;
+		int i = 0;//value from a dropdown box indicating how many assignments you want to input
+		while (i < numOfAssignments) {
+			Assignments assignment = new Assignments(assignmentTypes.get(i),
+					dueDates.get(i), weights.get(i).toString() + "%");
+			listOfAssignments.add(assignment);
+			i++;
+		}
+		System.out.println(listOfAssignments.get(0).getWeight());
 	}
 
 	public Stage getPrimaryStage() {
