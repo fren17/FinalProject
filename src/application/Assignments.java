@@ -9,7 +9,7 @@ public class Assignments extends Course{
 
 
 	public Assignments(String assignmentType, LocalDate dueDate, String weight) {
-		this.assignmentType = assignmentType;
+		this.setAssignmentType(assignmentType);
 		this.setDueDate(dueDate);
 		this.setWeight(weight);
 	}
@@ -32,6 +32,16 @@ public class Assignments extends Course{
 
 	public void setWeight(String weight) {
 		this.weight = weight;
+	}
+
+
+	public String getAssignmentType() {
+		return assignmentType;
+	}
+
+
+	public void setAssignmentType(String assignmentType) {
+		this.assignmentType = assignmentType;
 	}
 
 }

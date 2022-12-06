@@ -64,6 +64,7 @@ public class DueDatesController {
 		mainController.setDueDates(getAssignmentDates());
 		//mainController.setAssignmentTypes(null);
 		mainController.setWeights(getWeights());
+		mainController.setAssignmentTypes(getAssignmentTypes());
 		//root = FXMLLoader.load(getClass().getResource("ScheduleCheckerView.fxml"));
 		
 		
@@ -101,5 +102,16 @@ public class DueDatesController {
 		if (weightFive != null) weights.add(weightFive.getText());
 		System.out.println(weights);
 		return weights;
+	}
+	
+	public ArrayList<String> getAssignmentTypes() {
+		ArrayList<String> assignmentTypes = new ArrayList<String>();
+		if (assTypeOne != null) assignmentTypes.add(assTypeOne.getValue().toString());
+		if (assTypeTwo != null) assignmentTypes.add(assTypeTwo.getValue().toString());
+		if (assTypeThree != null) assignmentTypes.add(assTypeThree.getValue().toString());
+		if (assTypeFour != null) assignmentTypes.add(assTypeFour.getValue().toString());
+		if (assTypeFive != null) assignmentTypes.add(assTypeFive.getValue().toString());
+		System.out.println(assignmentTypes);
+		return assignmentTypes;
 	}
 }

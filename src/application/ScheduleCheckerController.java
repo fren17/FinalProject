@@ -44,7 +44,7 @@ public class ScheduleCheckerController{
 	
 	
 	private ArrayList<LocalDate> dueDates;
-	private ArrayList<ChoiceBox> assignmentTypes;
+	private ArrayList<String> assignmentTypes;
 	private ArrayList<String> weights;
 	ArrayList<Assignments> listOfAssignments;
 	private Stage primaryStage;
@@ -86,10 +86,10 @@ public class ScheduleCheckerController{
 	public ArrayList<LocalDate> getDueDates() {
 		return dueDates;
 	}
-	public void setAssignmentTypes(ArrayList<ChoiceBox> assignmentTypes) {
+	public void setAssignmentTypes(ArrayList<String> assignmentTypes) {
 		this.assignmentTypes = assignmentTypes;
 	}
-	public ArrayList<ChoiceBox> getAssignmentTypes() {
+	public ArrayList<String> getAssignmentTypes() {
 		return assignmentTypes;
 	}
 	public void setWeights(ArrayList<String> weights) {
@@ -109,7 +109,9 @@ public class ScheduleCheckerController{
 			 HBox rowContainer = new HBox();
 			 CheckBox assignmentCheckbox = new CheckBox();
 			 createAssignmentList();
-			 assignmentCheckbox.setText(listOfAssignments.get(rowsCreated).getWeight());
+			 assignmentCheckbox.setText(listOfAssignments.get(rowsCreated).getAssignmentType() + '\t'
+					+ listOfAssignments.get(rowsCreated).getDueDate() + '\t'
+					+ listOfAssignments.get(rowsCreated).getWeight());
 			 //assignmentCheckbox.setText(courseOne.getClassName() + '\t' + dueDates.get(rowsCreated));
 			 checkBoxes.add(assignmentCheckbox);
 			   
@@ -126,8 +128,8 @@ public class ScheduleCheckerController{
 		int numOfAssignments = 5;
 		int i = 0;//value from a dropdown box indicating how many assignments you want to input
 		while (i < numOfAssignments) {
-			Assignments assignment = new Assignments("placeholder for assignment type",
-					dueDates.get(i), weights.get(i).toString());
+			Assignments assignment = new Assignments(assignmentTypes.get(i),
+					dueDates.get(i), weights.get(i).toString() + "%");
 			listOfAssignments.add(assignment);
 			i++;
 		}

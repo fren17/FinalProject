@@ -35,7 +35,7 @@
                   <Insets bottom="10.0" left="2.0" right="10.0" top="15.0" />
                </HBox.margin>
             </Label>
-            <ChoiceBox prefWidth="150.0">
+            <ChoiceBox fx:id="assTypeOne" prefWidth="150.0">
            		 <items>
       	            <FXCollections fx:factory="observableArrayList">
       	            	<String fx:value="Lab" />
@@ -66,7 +66,7 @@
                   <Insets bottom="10.0" left="5.0" right="10.0" top="15.0" />
                </HBox.margin>
             </Label>
-            <ChoiceBox prefWidth="150.0">
+            <ChoiceBox fx:id="assTypeTwo" prefWidth="150.0">
            		 <items>
       	            <FXCollections fx:factory="observableArrayList">
       	            	<String fx:value="Lab" />
@@ -97,7 +97,7 @@
                   <Insets bottom="10.0" left="5.0" right="10.0" top="15.0" />
                </HBox.margin>
             </Label>
-            <ChoiceBox prefWidth="150.0">
+            <ChoiceBox fx:id="assTypeThree" prefWidth="150.0">
            		 <items>
       	            <FXCollections fx:factory="observableArrayList">
       	            	<String fx:value="Lab" />
@@ -128,7 +128,7 @@
                   <Insets bottom="10.0" left="5.0" right="10.0" top="15.0" />
                </HBox.margin>
             </Label>
-             <ChoiceBox prefWidth="150.0">
+             <ChoiceBox fx:id="assTypeFour" prefWidth="150.0">
            		 <items>
       	            <FXCollections fx:factory="observableArrayList">
       	            	<String fx:value="Lab" />
@@ -159,7 +159,7 @@
                   <Insets bottom="10.0" left="5.0" right="10.0" top="15.0" />
                </HBox.margin>
             </Label>
-             <ChoiceBox prefWidth="150.0">
+             <ChoiceBox fx:id="assTypeFive" prefWidth="150.0">
            		 <items>
       	            <FXCollections fx:factory="observableArrayList">
       	            	<String fx:value="Lab" />
