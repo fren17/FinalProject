@@ -1,7 +1,5 @@
 package application;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -9,12 +7,8 @@ import java.util.ArrayList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -46,7 +40,7 @@ public class ScheduleCheckerController{
 	private ArrayList<LocalDate> dueDates;
 	private ArrayList<String> assignmentTypes;
 	private ArrayList<String> weights;
-	ArrayList<Assignments> listOfAssignments;
+	private ArrayList<Assignments> listOfAssignments;
 	private Stage primaryStage;
 	private Scene mainScene;
 	private Parent root;
@@ -54,9 +48,8 @@ public class ScheduleCheckerController{
 	Course courseOne = new Course();
 	
 	public void displayCourses(String courseOneName, String courseTwoName, String courseThreeName, String courseFourName,String courseFiveName, String courseSixName) {
-		//courseOneLabel.setText(courseOneName + ":");
-		Course courseOne = new Course();
 		courseOne.setClassName(courseOneName);
+		System.out.println(courseOne.getClassName());
 		courseOneLabel.setText(courseOne.getClassName() + ":");
 		courseTwo.setText(courseTwoName + ":");
 		courseThree.setText(courseThreeName + ":");
@@ -109,10 +102,10 @@ public class ScheduleCheckerController{
 			 HBox rowContainer = new HBox();
 			 CheckBox assignmentCheckbox = new CheckBox();
 			 createAssignmentList();
-			 assignmentCheckbox.setText(listOfAssignments.get(rowsCreated).getAssignmentType() + '\t'
+			 assignmentCheckbox.setText(courseOneLabel.getText() + '\t'
+					+ listOfAssignments.get(rowsCreated).getAssignmentType() + '\t'
 					+ listOfAssignments.get(rowsCreated).getDueDate() + '\t'
 					+ listOfAssignments.get(rowsCreated).getWeight());
-			 //assignmentCheckbox.setText(courseOne.getClassName() + '\t' + dueDates.get(rowsCreated));
 			 checkBoxes.add(assignmentCheckbox);
 			   
 			 rowContainer.getChildren().addAll(assignmentCheckbox);
@@ -126,7 +119,7 @@ public class ScheduleCheckerController{
 	public void createAssignmentList() {
 		listOfAssignments = new ArrayList<Assignments>();
 		int numOfAssignments = 5;
-		int i = 0;//value from a dropdown box indicating how many assignments you want to input
+		int i = 0;
 		while (i < numOfAssignments) {
 			Assignments assignment = new Assignments(assignmentTypes.get(i),
 					dueDates.get(i), weights.get(i).toString() + "%");

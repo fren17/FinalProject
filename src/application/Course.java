@@ -2,8 +2,6 @@ package application;
 
 import java.util.ArrayList;
 
-import javafx.fxml.FXMLLoader;
-
 public class Course {
 	private ArrayList<Assignments> Assignments;
 	private String className;

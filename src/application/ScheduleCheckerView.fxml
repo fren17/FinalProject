@@ -7,50 +7,50 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.collections.FXCollections?>
 
-<HBox fx:id="mainScreen" prefHeight="985.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ScheduleCheckerController">
+<HBox prefHeight="985.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ScheduleCheckerController">
    <children>
       <ScrollPane prefHeight="985.0" prefWidth="715.0">
         <content>
          <VBox layoutX="-7.0" layoutY="-7.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="984.0" prefWidth="718.0">
             <children>
-               <Label fx:id="mainLabel" text="Welcome to your assignment Tracker. Please follow the steps below to start keeping track of your due dates." />
-               <Label fx:id="stepOne" prefHeight="17.0" prefWidth="579.0" text="Step 1: Insert the courses you are taking this semester, and indicate wether each is required for your major" />
+               <Label text="Welcome to your assignment Tracker. Please follow the steps below to start keeping track of your due dates." />
+               <Label prefHeight="17.0" prefWidth="579.0" text="Step 1: Insert the courses you are taking this semester, and indicate wether each is required for your major" />
                <Button mnemonicParsing="false" onAction="#setCourses" text="Insert Courses" />
-               <Label fx:id="stepTwo" text="Step 2: for each course, select the type of assignment, the due date of the assignment, and the weight of each component" />
+               <Label text="Step 2: for each course, select the type of assignment, the due date of the assignment, and the weight of each component" />
                <Label fx:id="courseOneLabel" prefHeight="17.0" prefWidth="153.0" text="Course One:" />
                <HBox prefHeight="37.0" prefWidth="718.0">
                   <children>
-                     <Button fx:id="dueDates1_1" mnemonicParsing="false" onAction="#setDueDates" text="Insert Due dates and weights" />
+                     <Button mnemonicParsing="false" onAction="#setDueDates" text="Insert Due dates and weights" />
                   </children>
                </HBox>
                <Label fx:id="courseTwo" prefHeight="17.0" prefWidth="119.0" text="Course Two:" />
                <HBox prefHeight="35.0" prefWidth="670.0">
                   <children>
-                     <Button fx:id="dueDates2_1" mnemonicParsing="false" text="Insert Due dates and weights" />
+                     <Button mnemonicParsing="false" onAction="#setDueDates" text="Insert Due dates and weights" />
                   </children>
                </HBox>
             <Label fx:id="courseThree" prefHeight="17.0" prefWidth="119.0" text="Course Three:" />
                <HBox prefHeight="35.0" prefWidth="670.0">
                   <children>
-                     <Button fx:id="dueDates3_1" mnemonicParsing="false" text="Insert Due dates and weights" />
+                     <Button mnemonicParsing="false" onAction="#setDueDates" text="Insert Due dates and weights" />
                   </children>
                </HBox>
             <Label fx:id="courseFour" prefHeight="17.0" prefWidth="119.0" text="Course Four:" />
                <HBox prefHeight="35.0" prefWidth="670.0">
                   <children>
-                     <Button fx:id="dueDates4_1" mnemonicParsing="false" text="Insert Due dates and weights" />
+                     <Button mnemonicParsing="false" onAction="#setDueDates" text="Insert Due dates and weights" />
                   </children>
                </HBox>
             <Label fx:id="courseFive" prefHeight="17.0" prefWidth="119.0" text="Course Five:" />
                <HBox prefHeight="35.0" prefWidth="670.0">
                   <children>
-                     <Button fx:id="dueDates5_1" mnemonicParsing="false" text="Insert Due dates and weights" />
+                     <Button mnemonicParsing="false" onAction="#setDueDates" text="Insert Due dates and weights" />
                   </children>
                </HBox>
             <Label fx:id="courseSix" prefHeight="17.0" prefWidth="119.0" text="Course Six:" />
                <HBox prefHeight="35.0" prefWidth="670.0">
                   <children>
-                     <Button fx:id="dueDates6_2" mnemonicParsing="false" text="Insert Due dates and weights" />
+                     <Button mnemonicParsing="false" onAction="#setDueDates" text="Insert Due dates and weights" />
                   </children>
                </HBox>
                   <Button mnemonicParsing="false" onAction="#trackAssignments" text="Track My Assignments">

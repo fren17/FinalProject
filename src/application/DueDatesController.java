@@ -20,7 +20,6 @@ import javafx.stage.Stage;
 public class DueDatesController {
 	
 	private Parent root;
-	private ScheduleCheckerController mainController;
 	
 	@FXML
 	DatePicker dateOne;
@@ -43,15 +42,15 @@ public class DueDatesController {
 	@FXML
 	TextField weightFive;
 	@FXML
-	ChoiceBox assTypeOne;
+	ChoiceBox<String> assTypeOne;
 	@FXML
-	ChoiceBox assTypeTwo;
+	ChoiceBox<String> assTypeTwo;
 	@FXML
-	ChoiceBox assTypeThree;
+	ChoiceBox<String> assTypeThree;
 	@FXML
-	ChoiceBox assTypeFour;
+	ChoiceBox<String> assTypeFour;
 	@FXML
-	ChoiceBox assTypeFive;
+	ChoiceBox<String> assTypeFive;
 	
 	
 	@FXML
@@ -62,23 +61,13 @@ public class DueDatesController {
 		root = loader.load();
 		ScheduleCheckerController mainController = loader.getController();
 		mainController.setDueDates(getAssignmentDates());
-		//mainController.setAssignmentTypes(null);
 		mainController.setWeights(getWeights());
 		mainController.setAssignmentTypes(getAssignmentTypes());
-		//root = FXMLLoader.load(getClass().getResource("ScheduleCheckerView.fxml"));
-		
-		
+
 		mainController.setPrimaryStage((Stage)((Node)event.getSource()).getScene().getWindow());
 		mainController.setMainScene(new Scene(root));
 		mainController.getPrimaryStage().setScene(mainController.getMainScene());
 		mainController.getPrimaryStage().show();
-		
-	/*	FXMLLoader loaderTwo = new FXMLLoader();
-		loaderTwo.setLocation(getClass().getResource("TrackerView.fxml"));
-		root = loaderTwo.load();
-		TrackerController trackerController = loaderTwo.getController();
-		trackerController.setAssignmentList(getAssignmentDates());
-		trackerController.displayList();*/
 	}
 	
 
