@@ -13,7 +13,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			Parent root = FXMLLoader.load(getClass().getResource("ScheduleCheckerView.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("MainScreenView.fxml"));
 			loader.getController();
 			Scene mainScene = new Scene(root, 400, 400);
 			primaryStage.setScene(mainScene);

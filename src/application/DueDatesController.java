@@ -22,47 +22,46 @@ public class DueDatesController {
 	private Parent root;
 	
 	@FXML
-	DatePicker dateOne;
+	private DatePicker dateOne;
 	@FXML
-	DatePicker dateTwo;
+	private DatePicker dateTwo;
 	@FXML
-	DatePicker dateThree;
+	private DatePicker dateThree;
 	@FXML
-	DatePicker dateFour;
+	private DatePicker dateFour;
 	@FXML
-	DatePicker dateFive;
+	private DatePicker dateFive;
 	@FXML
-	TextField weightOne;
+	private TextField weightOne;
 	@FXML
-	TextField weightTwo;
+	private TextField weightTwo;
 	@FXML
-	TextField weightThree;
+	private TextField weightThree;
 	@FXML
-	TextField weightFour;
+	private TextField weightFour;
 	@FXML
-	TextField weightFive;
+	private TextField weightFive;
 	@FXML
-	ChoiceBox<String> assTypeOne;
+	private ChoiceBox<String> assTypeOne;
 	@FXML
-	ChoiceBox<String> assTypeTwo;
+	private ChoiceBox<String> assTypeTwo;
 	@FXML
-	ChoiceBox<String> assTypeThree;
+	private ChoiceBox<String> assTypeThree;
 	@FXML
-	ChoiceBox<String> assTypeFour;
+	private ChoiceBox<String> assTypeFour;
 	@FXML
-	ChoiceBox<String> assTypeFive;
+	private ChoiceBox<String> assTypeFive;
 	
 	
 	@FXML
 	public void back(ActionEvent event) throws IOException{
-		System.out.println(dateOne.getValue());
 		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(getClass().getResource("ScheduleCheckerView.fxml"));
+		loader.setLocation(getClass().getResource("MainScreenView.fxml"));
 		root = loader.load();
-		ScheduleCheckerController mainController = loader.getController();
-		mainController.setDueDates(getAssignmentDates());
-		mainController.setWeights(getWeights());
-		mainController.setAssignmentTypes(getAssignmentTypes());
+		MainScreenController mainController = loader.getController();
+		mainController.setDueDatesList(assignmentDates());
+		mainController.setWeightsList(weights());
+		mainController.setAssignmentTypesList(assignmentTypes());
 
 		mainController.setPrimaryStage((Stage)((Node)event.getSource()).getScene().getWindow());
 		mainController.setMainScene(new Scene(root));
@@ -71,36 +70,33 @@ public class DueDatesController {
 	}
 	
 
-	public ArrayList<LocalDate> getAssignmentDates() {
+	public ArrayList<LocalDate> assignmentDates() {
 		ArrayList<LocalDate> dueDates = new ArrayList<LocalDate>();
 		if (dateOne != null) dueDates.add(dateOne.getValue());
 		if (dateTwo != null) dueDates.add(dateTwo.getValue());
 		if (dateThree != null) dueDates.add(dateThree.getValue());
 		if (dateFour != null) dueDates.add(dateFour.getValue());
 		if (dateFive != null) dueDates.add(dateFive.getValue());
-		System.out.println(dueDates);
 		return dueDates;
 	}
 	
-	public ArrayList<String> getWeights() {
+	public ArrayList<String> weights() {
 		ArrayList<String> weights = new ArrayList<String>();
 		if (weightOne != null) weights.add(weightOne.getText());
 		if (weightTwo != null) weights.add(weightTwo.getText());
 		if (weightThree != null) weights.add(weightThree.getText());
 		if (weightFour != null) weights.add(weightFour.getText());
 		if (weightFive != null) weights.add(weightFive.getText());
-		System.out.println(weights);
 		return weights;
 	}
 	
-	public ArrayList<String> getAssignmentTypes() {
+	public ArrayList<String> assignmentTypes() {
 		ArrayList<String> assignmentTypes = new ArrayList<String>();
 		if (assTypeOne != null) assignmentTypes.add(assTypeOne.getValue().toString());
 		if (assTypeTwo != null) assignmentTypes.add(assTypeTwo.getValue().toString());
 		if (assTypeThree != null) assignmentTypes.add(assTypeThree.getValue().toString());
 		if (assTypeFour != null) assignmentTypes.add(assTypeFour.getValue().toString());
 		if (assTypeFive != null) assignmentTypes.add(assTypeFive.getValue().toString());
-		System.out.println(assignmentTypes);
 		return assignmentTypes;
 	}
 }
