@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -33,6 +34,9 @@ public class CourseEntryController {
 	
 	@FXML
 	private TextField sixthCourse;
+	
+	@FXML
+	private Label errorLabel;
 
 
 	@FXML
@@ -74,6 +78,19 @@ public class CourseEntryController {
 		else {courseSix = "N/A";}
 		courseNames.add(courseSix);
 		return courseNames;
+	}
+	
+	public void error(String inputText) {
+		int t = 0;
+		int i = 0;
+		char upperLetter = (char) ('a' + t);
+		char lowerLetter = (char) ('A' + t);
+		if (firstCourse.getText().charAt(i) != upperLetter && firstCourse.getText().charAt(i) != lowerLetter
+				&& firstCourse.getText().charAt(i) != '1' && firstCourse.getText().charAt(i) != '2'&& firstCourse.getText().charAt(i) != '3'
+				&& firstCourse.getText().charAt(i) != '4' && firstCourse.getText().charAt(i) != '5' && firstCourse.getText().charAt(i) != '6'
+				&& firstCourse.getText().charAt(i) != '7' && firstCourse.getText().charAt(i) != '8' && firstCourse.getText().charAt(i) != '9') {
+			errorLabel.setText("Please only use letters and numbers for your course name (eg. Chem 351)");
+		}
 	}
 	
 }

@@ -3,7 +3,7 @@ package application;
 import java.time.LocalDate;
 
 public class Assignments extends Course{
-	private LocalDate dueDate;
+	private LocalDate dueDate; 
 	private String assignmentType;
 	private String weight;
 
