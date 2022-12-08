@@ -1,11 +1,6 @@
 package application;
 
-import java.util.ArrayList;
-
-import javafx.fxml.FXMLLoader;
-
 public class Course {
-	private ArrayList<Assignments> Assignments;
 	private String className;
 	
 	public String getClassName() {
@@ -16,9 +11,12 @@ public class Course {
 		this.className = className;
 	}
 	
-	public void addAssignments(Assignments theAssignment) {
+	//To implement:
+	
+	/**private ArrayList<Assignments> Assignments;
+	 * public void addAssignments(Assignments theAssignment) {
 		Assignments = new ArrayList<Assignments>();
 		Assignments.add(theAssignment);
 		
-	}
+	}**/
 }
