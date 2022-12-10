@@ -27,6 +27,7 @@ public class DueDatesController {
 	
 	private Parent root;
 	
+	// the user can enter 5 assignments, each with 5 assignment types (lab, tutorial, etc), weights, and due dates
 	@FXML
 	private DatePicker dateOne;
 	@FXML
@@ -63,6 +64,7 @@ public class DueDatesController {
 	 * screen. it does this by showing the main screen on the scene again, and calls mutator methods setDueDatesList, 
 	 * setWeightsList, and setAssignmentTypesList in the main controller to pass on values of this class' instance 
 	 * variables (assignmentDates(), weights(), and assignmentTypes() array lists) to be used by the main controller
+	 * 
 	 * @param event is a parameter of type ActionEvent, which is used when a button has been pressed
 	 * @throws IOException this exception is thrown if something happens to MainScreenView and it can no longer
 	 * set this as a resource for the FXMLLoader
@@ -73,9 +75,9 @@ public class DueDatesController {
 		loader.setLocation(getClass().getResource("MainScreenView.fxml"));
 		root = loader.load();
 		MainScreenController mainController = loader.getController();
-		mainController.setDueDatesList(assignmentDates());
-		mainController.setWeightsList(weights());
-		mainController.setAssignmentTypesList(assignmentTypes());
+		mainController.setDueDatesList(assignmentDates()); // set the list of due dates in the main controller as the list of dates created in this controller
+		mainController.setWeightsList(weights()); // set the list of weights in the main controller as the list of weights created in this controller
+		mainController.setAssignmentTypesList(assignmentTypes()); // set the list of assignment types in the main controller as the list of types created in this controller
 
 		mainController.setPrimaryStage((Stage)((Node)event.getSource()).getScene().getWindow());
 		mainController.setMainScene(new Scene(root));
@@ -86,45 +88,55 @@ public class DueDatesController {
 	/**
 	 * assignmentDates() creates a new array list of the type LocalDate (format yyyy-mm-dd) and adds the input of the 
 	 * dates from the user into the list, as long as the input is not null
+	 * 
 	 * @return the due dates as an array list of local date types
 	 */
+	
 	public ArrayList<LocalDate> assignmentDates() {
-		ArrayList<LocalDate> dueDates = new ArrayList<LocalDate>();
-		if (dateOne != null) dueDates.add(dateOne.getValue());
+		ArrayList<LocalDate> dueDates = new ArrayList<LocalDate>(); // initializing the new list
+		
+		if (dateOne != null) dueDates.add(dateOne.getValue()); // adding each value inputed by the user into the list if it is not null
 		if (dateTwo != null) dueDates.add(dateTwo.getValue());
 		if (dateThree != null) dueDates.add(dateThree.getValue());
 		if (dateFour != null) dueDates.add(dateFour.getValue());
 		if (dateFive != null) dueDates.add(dateFive.getValue());
+		
 		return dueDates;
 	}
 	
 	/**
 	 * weights() creates a new array list of the type string and adds the input of the weight towards the course component
 	 * from the user into the list, as long as the input is not null
+	 * 
 	 * @return the weights as an array list of type string
 	 */
 	public ArrayList<String> weights() {
-		ArrayList<String> weights = new ArrayList<String>();
-		if (weightOne != null) weights.add(weightOne.getText());
+		ArrayList<String> weights = new ArrayList<String>(); // initializing the new list
+		
+		if (weightOne != null) weights.add(weightOne.getText()); // adding each value inputed by the user into the list if it is not null
 		if (weightTwo != null) weights.add(weightTwo.getText());
 		if (weightThree != null) weights.add(weightThree.getText());
 		if (weightFour != null) weights.add(weightFour.getText());
 		if (weightFive != null) weights.add(weightFive.getText());
+		
 		return weights;
 	}
 	
 	/**
 	 * assignmentTypes() creates a new array list of the type string and adds the input of the assignment types
 	 * (labs, tutorials, etc) selected from the user into the list, as long as the input is not null
+	 * 
 	 * @return the assignment types as an array list of type string
 	 */
 	public ArrayList<String> assignmentTypes() {
-		ArrayList<String> assignmentTypes = new ArrayList<String>();
-		if (assTypeOne != null) assignmentTypes.add(assTypeOne.getValue().toString());
+		ArrayList<String> assignmentTypes = new ArrayList<String>(); // initializing the new list
+		
+		if (assTypeOne != null) assignmentTypes.add(assTypeOne.getValue().toString()); // adding each value inputed by the user into the list if it is not null
 		if (assTypeTwo != null) assignmentTypes.add(assTypeTwo.getValue().toString());			
 		if (assTypeThree != null) assignmentTypes.add(assTypeThree.getValue().toString());
 		if (assTypeFour != null) assignmentTypes.add(assTypeFour.getValue().toString());
 		if (assTypeFive != null) assignmentTypes.add(assTypeFive.getValue().toString());
+		
 		return assignmentTypes;
 	}
 }

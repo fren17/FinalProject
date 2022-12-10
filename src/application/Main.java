@@ -10,19 +10,23 @@ import javafx.scene.Scene;
 /**
  * The main class is a child class of the Application class (from the Java library). The main class begins the program
  * by setting the scene as the main scene (MainScreenView.fxml).
+ * 
  * @author CS219-user Freeha Anjum
  *
  */
+
 public class Main extends Application {
+	
 	/**
 	 * the start method sets the stage with the main screen (MainScreenView.fxml) with the controller MainScreenController.java
 	 * it also catches any exceptions in loading the new screen
 	 */
+	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
 			FXMLLoader loader = new FXMLLoader();
-			Parent root = FXMLLoader.load(getClass().getResource("MainScreenView.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("MainScreenView.fxml")); ////https://www.youtube.com/watch?v=hcM-R-YOKkQ&ab_channel=BroCode
 			loader.getController();
 			Scene mainScene = new Scene(root, 400, 400);
 			primaryStage.setScene(mainScene);
@@ -32,9 +36,12 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
+	
+	
 	/**
 	 * the main method launches the program using the launch method from the application class
-	 * @param args
+	 * 
+	 * @param args the command line arguments passed to the application
 	 */
 	public static void main(String[] args) {
 		launch(args);

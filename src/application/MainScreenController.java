@@ -24,6 +24,7 @@ import javafx.scene.Scene;
  * @author CS219-user Freeha Anjum
  *
  */
+
 public class MainScreenController{
 	
 	//there are six labels from the fxml file for the course names
@@ -45,12 +46,12 @@ public class MainScreenController{
 	@FXML
 	private Label courseSixLabel;
 	
-	// due dates, assignment types, and weights array lists needed to iterate over values in other methods
+	// due dates, assignment types, and weights array lists are needed to iterate over values in other methods
 	private ArrayList<LocalDate> dueDatesList;
 	private ArrayList<String> assignmentTypesList;
 	private ArrayList<String> weightsList;
 	
-	private ArrayList<Assignments> listOfAssignments; // array list of type assignment, from assignment.java class
+	private ArrayList<Assignments> listOfAssignments; // array list of type assignment, from Assignment.java class
 	
 	// variables needed to show screens
 	private Stage primaryStage;
@@ -69,6 +70,7 @@ public class MainScreenController{
 	 * this method takes a list of course names and prints them on the screen. It uses the setClassName() method
 	 * from the course class to give each course an instance of a class name. It then sets the texts of the course name labels
 	 * to the corresponding course name to display to the screen when it is called
+	 * 
 	 * @param courseNames an array list of strings containing the names of each course inputted by the user
 	 */
 	public void displayCourses(ArrayList<String> courseNames) {
@@ -85,14 +87,15 @@ public class MainScreenController{
 		courseSix.setClassName(courseNames.get(5));
 		courseSixLabel.setText(courseSix.getClassName() + ":");
 	}
+	
 	/**
 	 * inputClassNames is linked to the button on the MainScreenView.fxml file, which takes the user to a screen where they can
 	 * input the names of their courses (CourseEntryView). it does this by loading the new fxml view and setting it as the new scene. 
+	 * 
 	 * @param event is a parameter of type ActionEvent, which is used when a button has been pressed
 	 * @throws IOException this exception is thrown if something happens to CourseEntryView and it can no longer
 	 * set this as a resource for the FXMLLoader
 	 */
-	
 	public void inputClassNames(ActionEvent event) throws IOException{ //https://www.youtube.com/watch?v=hcM-R-YOKkQ&ab_channel=BroCode
 		root = FXMLLoader.load(getClass().getResource("CourseEntryView.fxml"));
 		setPrimaryStage((Stage)((Node)event.getSource()).getScene().getWindow());
@@ -118,7 +121,66 @@ public class MainScreenController{
 	}
 	
 	/**
+	 * This method shows the final tracker screen. It does this by iterating over each assignment added to the 
+	 * listOfAssignments instance variable and creating a new checkbox for each assignment. The information for the
+	 * assignment (the course it is associated with, it's due date, it's weight, and the type of assignment) is then
+	 * printed to the checkboxes (one assignment correlated to one checkbox). This information is then added to the scene
+	 * to be shown to the user.
+	 * 
+	 * @param event event is a parameter of type ActionEvent, which is used when a button has been pressed
+	 * 
+	 */
+	public void trackAssignments(ActionEvent event){
+		mainScene = primaryStage.getScene();
+		int numOfAssignments = 5; // number of assignments inputed by the user for each class
+		int rowsCreated = 0; // rows of check boxes initially
+		ArrayList<CheckBox> checkBoxes = new ArrayList<CheckBox>(); // creating check box list
+		VBox container = new VBox();
+		 while (rowsCreated < numOfAssignments) {
+			 HBox rowContainer = new HBox();
+			 CheckBox assignmentCheckbox = new CheckBox(); // new check box for each assignment
+			 setListOfAssignments(); // calls method which creates instances of each assignment
+			 assignmentCheckbox.setText(courseOneLabel.getText() + '\t'
+					+ getListOfAssignments().get(rowsCreated).getDueDate() + '\t'
+					+ getListOfAssignments().get(rowsCreated).getWeight() + '\t'
+					+ getListOfAssignments().get(rowsCreated).getAssignmentType()); // sending assignment information to the label on the newly created check box
+			 checkBoxes.add(assignmentCheckbox); // adding newly created check boxes to the check box list
+			 rowContainer.getChildren().addAll(assignmentCheckbox);
+			 rowsCreated++;
+			 container.getChildren().add(rowContainer); // adding everything to one VBox
+		 }
+		 Scene trackerView = new Scene(container);
+		 primaryStage.setScene(trackerView); // showing tracker view to user
+	}
+	
+	/**
+	 * initializes the listOfAssignments instance variable and creates a new instance of the assignment class for
+	 * each assignment inputed from the user using the constructor from the assignment class
+	 */
+	public void setListOfAssignments() {
+		listOfAssignments = new ArrayList<Assignments>(); // initializing the instance variable
+		int numOfAssignments = 5; // total number of assignments user is entering information for
+		int i = 0;
+		while (i < numOfAssignments) {
+			Assignments assignment = new Assignments(assignmentTypesList.get(i), // creating new instance of assignment class, using constructor from that class
+					dueDatesList.get(i), weightsList.get(i).toString() + "%");
+			listOfAssignments.add(assignment); // adding it to list in order to iterate over it in the trackAssignments() method
+			i++;
+		}
+	}
+	
+	/**
+	 * accessor method to retrieve the list of assignments 
+	 * 
+	 * @return an array list of the assignments, of type Assignment
+	 */
+	public ArrayList<Assignments> getListOfAssignments() {
+		return listOfAssignments;
+	}
+	
+	/**
 	 * mutator method to set the list of due dates by making the parameter equal to the instance variable
+	 * 
 	 * @param dueDates array list of due dates of type LocalDate (format yyyy-mm-dd)
 	 */
 	public void setDueDatesList(ArrayList<LocalDate> dueDates) {
@@ -133,6 +195,7 @@ public class MainScreenController{
 	public ArrayList<LocalDate> getDueDatesList() {
 		return dueDatesList;
 	}
+	
 	/**
 	 * mutator method to set the list of assignment types (lab, tutorial, etc) by making the parameter equal to the instance variable
 	 * 
@@ -154,8 +217,9 @@ public class MainScreenController{
 	/** 
 	 * mutator method to get the list of weights by making the parameter equal to the instance variable
 	 * 
-	 * @param weights array list of weights towards course component as a string
+	 * @param weights array list of weights for each assignment as a string
 	 */
+	
 	public void setWeightsList(ArrayList<String> weights) {
 		this.weightsList = weights;
 	}
@@ -167,65 +231,6 @@ public class MainScreenController{
 	 */
 	public ArrayList<String> getWeightsList() {
 		return weightsList;
-	}
-	
-	
-	/**
-	 * This method shows the final tracker screen. It does this by iterating over each assignment added to the 
-	 * listOfAssignments instance variable and creating a new checkbox for each assignment. The information for the
-	 * assignment (the course it is associated with, it's due date, it's weight, and the type of assignment) is then
-	 * printed to the checkboxes (one assignment correlated to one checkbox). This information is added to a VBox which
-	 * is then set to a scene and shown to the user
-	 * 
-	 * @param event event is a parameter of type ActionEvent, which is used when a button has been pressed
-	 * 
-	 */
-	public void trackAssignments(ActionEvent event){
-		mainScene = primaryStage.getScene();
-		int numOfAssignments = 5; // number of assignments inputted by the user for each class
-		int rowsCreated = 0; // rows of checkboxes initially
-		ArrayList<CheckBox> checkBoxes = new ArrayList<CheckBox>();
-		VBox container = new VBox();
-		 while (rowsCreated < numOfAssignments) {
-			 HBox rowContainer = new HBox();
-			 CheckBox assignmentCheckbox = new CheckBox(); // new checkbox for each assignment
-			 setListOfAssignments();
-			 assignmentCheckbox.setText(courseOneLabel.getText() + '\t'
-					+ getListOfAssignments().get(rowsCreated).getDueDate() + '\t'
-					+ getListOfAssignments().get(rowsCreated).getWeight() + '\t'
-					+ getListOfAssignments().get(rowsCreated).getAssignmentType()); // sending assignment information to the label on the newly created checkbox
-			 checkBoxes.add(assignmentCheckbox);
-			 rowContainer.getChildren().addAll(assignmentCheckbox);
-			 rowsCreated++;
-			 container.getChildren().add(rowContainer);
-		 }
-		 Scene trackerView = new Scene(container);
-		 primaryStage.setScene(trackerView);
-	}
-	
-	/**
-	 * initializes the listOfAssignments instance variable and creates a new instance of the assignment class for
-	 * each assignment inputted from the user using the constructor from the assignment class
-	 */
-	public void setListOfAssignments() {
-		listOfAssignments = new ArrayList<Assignments>();
-		int numOfAssignments = 5; // total number of assignments user is entering information for
-		int i = 0;
-		while (i < numOfAssignments) {
-			Assignments assignment = new Assignments(assignmentTypesList.get(i), // creating new instance of assignment class, using constructor from that class
-					dueDatesList.get(i), weightsList.get(i).toString() + "%");
-			listOfAssignments.add(assignment);
-			i++;
-		}
-	}
-	
-	/**
-	 * accessor method to retrieve the list of assignments 
-	 * 
-	 * @return an array list of the assignments, of type Assignment
-	 */
-	public ArrayList<Assignments> getListOfAssignments() {
-		return listOfAssignments;
 	}
 
 	/**

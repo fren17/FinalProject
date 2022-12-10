@@ -4,6 +4,7 @@ import java.time.LocalDate;
 /**
  * class which assigns a type (lab, tutorial, etc), due date, and weight to each assignment
  * that is entered by the user
+ * 
  * @author CS219-user Freeha Anjum
  *
  */
@@ -14,6 +15,7 @@ public class Assignments extends Course{
 
 	/**
 	 * constructor method which sets values for each instance variable when called
+	 * 
 	 * @param assignmentType the type of assignment selected in the choicebox (lab, tutorial, etc)
 	 * @param dueDate the due date selected from the date picker
 	 * @param weight the total weight of the course component towards the course 
@@ -26,6 +28,7 @@ public class Assignments extends Course{
 
 	/**
 	 * accessor method to retrieve the due date
+	 * 
 	 * @return due date as a LocalDate type (yyyy-mm-dd)
 	 */
 	public LocalDate getDueDate() {
@@ -34,6 +37,7 @@ public class Assignments extends Course{
 
 	/**
 	 * mutator method to set the due date
+	 * 
 	 * @param dueDate due date as a LocalDate type (yyyy-mm-dd)
 	 */
 	public void setDueDate(LocalDate dueDate) {
@@ -42,6 +46,7 @@ public class Assignments extends Course{
 
 	/**
 	 * accessor method to retrieve the weight of the assignment
+	 * 
 	 * @return weight as a string
 	 */
 	public String getWeight() {
@@ -50,6 +55,7 @@ public class Assignments extends Course{
 
 	/**
 	 * mutator method to set the weight of the assignment
+	 * 
 	 * @param weight the weight of the assignment as a string
 	 */
 	public void setWeight(String weight) {
@@ -58,6 +64,7 @@ public class Assignments extends Course{
 
 	/**
 	 * accessor method to retrieve the assignemnt type from the choicebox (tutorial, lab, etc)
+	 * 
 	 * @return type of assignment (tutorial, lab, etc) as a string
 	 */
 	public String getAssignmentType() {
@@ -66,6 +73,7 @@ public class Assignments extends Course{
 
 	/**
 	 * mutator method to set the type of assignment (tutorial, lab, etc)
+	 * 
 	 * @param assignmentType the type of assignment (tutorial, lab, etc) as a string
 	 */
 	public void setAssignmentType(String assignmentType) {
