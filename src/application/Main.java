@@ -7,8 +7,17 @@ import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
-
+/**
+ * The main class is a child class of the Application class (from the Java library). The main class begins the program
+ * by setting the scene as the main scene (MainScreenView.fxml).
+ * @author CS219-user Freeha Anjum
+ *
+ */
 public class Main extends Application {
+	/**
+	 * the start method sets the stage with the main screen (MainScreenView.fxml) with the controller MainScreenController.java
+	 * it also catches any exceptions in loading the new screen
+	 */
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -23,7 +32,10 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
-	
+	/**
+	 * the main method launches the program using the launch method from the application class
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}

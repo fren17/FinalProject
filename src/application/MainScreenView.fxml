@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import javafx.collections.*?>
 <?import javafx.scene.control.*?>
@@ -7,55 +8,117 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.collections.FXCollections?>
 
-<HBox prefHeight="985.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainScreenController">
+<HBox prefHeight="985.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainScreenController">
    <children>
-      <ScrollPane prefHeight="985.0" prefWidth="715.0">
+      <ScrollPane prefHeight="987.0" prefWidth="788.0">
         <content>
-         <VBox layoutX="-7.0" layoutY="-7.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="984.0" prefWidth="718.0">
+         <VBox layoutX="-7.0" layoutY="-7.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="984.0" prefWidth="771.0">
             <children>
-               <Label text="Welcome to your assignment Tracker. Please follow the steps below to start keeping track of your due dates." />
-               <Label prefHeight="17.0" prefWidth="579.0" text="Step 1: Insert the courses you are taking this semester, and indicate wether each is required for your major" />
-               <Button mnemonicParsing="false" onAction="#inputClassNames" text="Insert Courses" />
-               <Label text="Step 2: for each course, select the type of assignment, the due date of the assignment, and the weight of each component" />
-               <Label fx:id="courseOneLabel" prefHeight="17.0" prefWidth="153.0" text="Course One:" />
-               <HBox prefHeight="37.0" prefWidth="718.0">
-                  <children>
-                     <Button mnemonicParsing="false" onAction="#inputAssignmentInfo" text="Insert Due dates and weights" />
-                  </children>
-               </HBox>
-               <Label fx:id="courseTwoLabel" prefHeight="17.0" prefWidth="119.0" text="Course Two:" />
-               <HBox prefHeight="35.0" prefWidth="670.0">
-                  <children>
-                     <Button mnemonicParsing="false" onAction="#inputAssignmentInfo" text="Insert Due dates and weights" />
-                  </children>
-               </HBox>
-            <Label fx:id="courseThreeLabel" prefHeight="17.0" prefWidth="119.0" text="Course Three:" />
-               <HBox prefHeight="35.0" prefWidth="670.0">
-                  <children>
-                     <Button mnemonicParsing="false" onAction="#inputAssignmentInfo" text="Insert Due dates and weights" />
-                  </children>
-               </HBox>
-            <Label fx:id="courseFourLabel" prefHeight="17.0" prefWidth="119.0" text="Course Four:" />
-               <HBox prefHeight="35.0" prefWidth="670.0">
-                  <children>
-                     <Button mnemonicParsing="false" onAction="#inputAssignmentInfo" text="Insert Due dates and weights" />
-                  </children>
-               </HBox>
-            <Label fx:id="courseFiveLabel" prefHeight="17.0" prefWidth="119.0" text="Course Five:" />
-               <HBox prefHeight="35.0" prefWidth="670.0">
-                  <children>
-                     <Button mnemonicParsing="false" onAction="#inputAssignmentInfo" text="Insert Due dates and weights" />
-                  </children>
-               </HBox>
-            <Label fx:id="courseSixLabel" prefHeight="17.0" prefWidth="119.0" text="Course Six:" />
-               <HBox prefHeight="35.0" prefWidth="670.0">
-                  <children>
-                     <Button mnemonicParsing="false" onAction="#inputAssignmentInfo" text="Insert Due dates and weights" />
-                  </children>
-               </HBox>
-                  <Button mnemonicParsing="false" onAction="#trackAssignments" text="Track My Assignments">
+               <Label text="Welcome to your Assignment Tracker! Please follow the steps below to start keeping track of your due dates." textAlignment="CENTER" textFill="#0400ff" textOverrun="LEADING_ELLIPSIS" wrapText="true">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Label>
+               <Label prefHeight="27.0" prefWidth="766.0" text="Step 1: Insert the courses you are taking this semester, and indicate wether each is required for your major" wrapText="true">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
                      <VBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin></Label>
+               <Button mnemonicParsing="false" onAction="#inputClassNames" text="Insert Courses">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin></Button>
+               <Label text="Step 2: for each course, select the type of assignment, the due date, and the weight">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font></Label>
+               <Label fx:id="courseOneLabel" prefHeight="17.0" prefWidth="153.0" text="Course One:">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin></Label>
+               <HBox prefHeight="37.0" prefWidth="718.0">
+                  <children>
+                     <Button mnemonicParsing="false" onAction="#inputAssignmentInfo" text="Insert Due dates and weights">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin></Button>
+                  </children>
+               </HBox>
+               <Label fx:id="courseTwoLabel" prefHeight="17.0" prefWidth="119.0" text="Course Two:">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin></Label>
+               <HBox prefHeight="35.0" prefWidth="670.0">
+                  <children>
+                     <Button mnemonicParsing="false" onAction="#inputAssignmentInfo" text="Insert Due dates and weights">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin></Button>
+                  </children>
+               </HBox>
+            <Label fx:id="courseThreeLabel" prefHeight="17.0" prefWidth="119.0" text="Course Three:">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin></Label>
+               <HBox prefHeight="35.0" prefWidth="670.0">
+                  <children>
+                     <Button mnemonicParsing="false" onAction="#inputAssignmentInfo" text="Insert Due dates and weights">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin></Button>
+                  </children>
+               </HBox>
+            <Label fx:id="courseFourLabel" prefHeight="17.0" prefWidth="119.0" text="Course Four:">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin></Label>
+               <HBox prefHeight="35.0" prefWidth="670.0">
+                  <children>
+                     <Button mnemonicParsing="false" onAction="#inputAssignmentInfo" text="Insert Due dates and weights">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin></Button>
+                  </children>
+               </HBox>
+            <Label fx:id="courseFiveLabel" prefHeight="17.0" prefWidth="119.0" text="Course Five:">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin></Label>
+               <HBox prefHeight="35.0" prefWidth="670.0">
+                  <children>
+                     <Button mnemonicParsing="false" onAction="#inputAssignmentInfo" text="Insert Due dates and weights">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin></Button>
+                  </children>
+               </HBox>
+            <Label fx:id="courseSixLabel" prefHeight="17.0" prefWidth="119.0" text="Course Six:">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin></Label>
+               <HBox prefHeight="35.0" prefWidth="670.0">
+                  <children>
+                     <Button mnemonicParsing="false" onAction="#inputAssignmentInfo" text="Insert Due dates and weights">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin></Button>
+                  </children>
+               </HBox>
+                  <Label text="Step 3: You can now track your assignments by clicking the button below!">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Button mnemonicParsing="false" onAction="#trackAssignments" text="Track My Assignments">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
                      </VBox.margin>
                   </Button>
             </children>
